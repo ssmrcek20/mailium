@@ -1,0 +1,17 @@
+.inbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    gap: 2rem;
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    mat-card {
+        max-width: 50rem;
+        width: 90%;
+    }
+}
