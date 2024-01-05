@@ -2,7 +2,7 @@
     <h1>Login</h1>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
 
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" color="accent">
             <mat-label>Enter your email</mat-label>
             <input matInput placeholder="john@gmail.com" [(ngModel)]="model.email" name="email" required email>
             @if (loginForm.controls['email'].hasError('email')) {
@@ -10,7 +10,7 @@
               }
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" color="accent">
             <mat-label>Enter your password</mat-label>
             <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="model.password" name="password" required minlength="6">
             <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">

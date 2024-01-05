@@ -2,12 +2,12 @@
     <h1>Registration</h1>
     <form #registrationForm="ngForm" (ngSubmit)="onSubmit()">
 
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" color="accent">
             <mat-label>Enter your name</mat-label>
             <input matInput placeholder="John" [(ngModel)]="model.name" name="name" required>
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" color="accent">
             <mat-label>Enter your email</mat-label>
             <input matInput placeholder="john@gmail.com" [(ngModel)]="model.email" name="email" required email>
             @if (registrationForm.controls['email'].hasError('email')) {
@@ -15,7 +15,7 @@
               }
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" color="accent">
             <mat-label>Enter your password</mat-label>
             <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="model.password" name="password" required minlength="6">
             <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
