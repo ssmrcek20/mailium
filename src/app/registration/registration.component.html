@@ -1,11 +1,16 @@
-<div class="login">
-    <h1>Login</h1>
-    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+<div class="registration">
+    <h1>Registration</h1>
+    <form #registrationForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your name</mat-label>
+            <input matInput placeholder="John" [(ngModel)]="model.name" name="name" required>
+        </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Enter your email</mat-label>
             <input matInput placeholder="john@gmail.com" [(ngModel)]="model.email" name="email" required email>
-            @if (loginForm.controls['email'].hasError('email')) {
+            @if (registrationForm.controls['email'].hasError('email')) {
                 <mat-error>Email is not valid</mat-error>
               }
         </mat-form-field>
@@ -16,14 +21,15 @@
             <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
-            @if (loginForm.controls['password'].hasError('minlength')) {
+            @if (registrationForm.controls['password'].hasError('minlength')) {
                 <mat-error>Password must be at least 6 characters long</mat-error>
               }
         </mat-form-field>
 
-        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid" class="login-button">Login</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.form.valid" class="register-button">Register</button>
     </form>
-    <div class="link">Don't have an account?
-        <a mat-button color="primary" routerLink="/registration">Register</a>
+    <div class="link">Already have an account?
+        <a mat-button color="primary" routerLink="/login">Login</a>
     </div>
 </div>
+
