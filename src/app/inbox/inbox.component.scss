@@ -11,7 +11,12 @@
         max-width: 60rem;
         margin-bottom: 2rem;
         align-items: center;
-        justify-content: space-between;;
+        justify-content: space-between;
+
+        .empty {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
 
         #inbox-title {
             font-size: 2.2rem;

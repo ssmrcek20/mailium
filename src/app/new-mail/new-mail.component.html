@@ -1,0 +1,35 @@
+<div class="new-mail">
+    <div class="nav">
+        <button mat-icon-button matTooltip="Inbox" color="primary" routerLink="/inbox">
+            <mat-icon>arrow_back_ios</mat-icon>
+          </button>
+      <h1 id="new-mail-title">New mail</h1>
+      <button mat-icon-button matTooltip="Logout" color="primary">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+
+    <form #mailForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="outline" color="accent">
+            <mat-label>Enter title</mat-label>
+            <input matInput [(ngModel)]="model.title" name="title" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" color="accent">
+            <mat-label>Send to</mat-label>
+            <mat-select [(ngModel)]="model.sendTo" name="sendTo" required>
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" color="accent">
+            <mat-label>Mail content</mat-label>
+            <textarea cdkTextareaAutosize matInput [(ngModel)]="model.mail" name="mail" required></textarea>
+          </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="!mailForm.form.valid" class="mail-button">Send</button>
+    </form>
+  
+</div>
