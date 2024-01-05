@@ -1,3 +1,6 @@
+@use '@angular/material' as mat;
+@import '../../variables.scss';
+
 .login {
     display: flex;
     flex-direction: column;
@@ -13,7 +16,7 @@
         flex-direction: column;
         align-items: center;
         margin-top: 4rem;
-        gap: 2rem;
+        gap: 1.5rem;
 
         mat-form-field {
             width: 15rem;
@@ -22,7 +25,10 @@
         .login-button {
             width: 12rem;
             height: 2.5rem;
-            margin-top: 1rem;
         }
+    }
+
+    .link {
+        margin-top: 1.5rem;
     }
 }
